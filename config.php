@@ -21,7 +21,24 @@ function safeinput($input) {
 }
 
 function validate() {
+	if ($_POST['name']=='') {
+		echo 'Name in empty';
+		return false;
+	}
+	if ($_POST['surname']=='') {
+		echo 'Surname is empty';
+		return false;
+	}
+	if (strlen($_POST['password'])<8) {
+		echo 'Password too short';
+		return false;
+	}
+	if ((strlen($_POST['login'])<6) || (!preg_match('/^[0-9a-zA-Z]+$/', $_POST['login']))) {
+		echo 'Login too short or contains unsupported chars';
+		return false;
+	}
 	
+	return true;
 }
 
 function hash($pass) {
