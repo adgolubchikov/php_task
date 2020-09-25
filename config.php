@@ -11,9 +11,21 @@ $dsn = 'mysql:dbname='.$db_name.'testdb;host='.$db_server;
 
 
 try {
-    $dbh = new PDO($dsn, $db_login, $db_pass);
+    $conn = new PDO($dsn, $db_login, $db_pass);
 } catch (PDOException $e) {
     echo 'Database connection error: ' . $e->getMessage();
+}
+
+function safeinput($input) {
+	return mysql_real_escape_string(strip_tags($input));
+}
+
+function validate() {
+	
+}
+
+function hash($pass) {
+	return md5(md5($pass).$salt);
 }
 
 ?>
