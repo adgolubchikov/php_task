@@ -28,7 +28,7 @@
   <main class="mdl-layout__content">
     <section class="mdl-layout__tab-panel is-active" id="fixed-tab-1">
       <div class="page-content">
-      <form id="signup" name="signup" action="signup.php" method="post" onsubmit="check()">
+      <form id="signup" name="signup" action="signup.php" method="post" onsubmit="return check()">
 	  <h3>Sign Up form</h3>
 	  Login: <input type="text" id="login" name="login" /><br/>
 	  Hasło: <input type="password" id="password" name="password" /><br/>
@@ -40,7 +40,7 @@
 	  <option value="nonbinary">Non-Binary</option>
 	  <option value="notanswer">Prefer not to answer</option>
 	  </select>
-	  <input class="mdl-button mdl-js-button mdl-button--raised mdl-button--colored" type="submit" value="Sign Up" onclick="check()" />
+	  <input class="mdl-button mdl-js-button mdl-button--raised mdl-button--colored" type="submit" value="Sign Up" />
 	  </form>
       </div>
     </section>
